@@ -23,30 +23,4 @@ public class binary {
 		}
 		return end;
 	}
-//	public int solution(int[] budgets, int M) {
-//        int start=0, end=0;
-//		int sum =0;
-//		for(int budget : budgets) {
-//			if(end<budget) end = budget;
-//		}
-//		int mid=0;
-//		while(start<=end) {
-//			mid = (start+end)/2;
-//			sum=0;
-//			
-//			for(int i=0; i<budgets.length; i++) {
-//				if(budgets[i]>mid) {
-//					sum+=mid;
-//				}else
-//					sum+=budgets[i];
-//			}
-//			if(sum<M) {
-//				start = mid+1;
-//			}else {
-//				end = mid-1;
-//			}
-//            System.out.println(start+" "+end+" "+mid);
-//		}
-//		return end;
-//	}
 }

@@ -11,17 +11,22 @@ public class Hash1 {
         String answer = "";
         HashMap<String, Integer> hm = new HashMap<String, Integer>();
         for(String com : completion) {
-        	if(hm.containsKey(com)) {
-        		hm.replace(com, hm.get(com)+1);
-        	}else {
+        	if(!hm.containsKey(com)){
         		hm.put(com, 1);
+        	}else {
+        		hm.put(com, hm.get(com)+1);
         	}
         }
         
-        for(String part : participant) {
-        	if (!hm.containsKey(part)) return part;
-            else if(hm.get(part)==0) return part;
-        	else hm.replace(part, hm.get(part)-1);
+        for(String key : participant) {
+        	if(!hm.containsKey(key)) {
+        		return key;
+        	}else if(hm.get(key)==0) {
+        		return key;
+        	}else {
+        		hm.replace(key, hm.get(key)-1);
+        	}
+        	
         }
         
         return answer;

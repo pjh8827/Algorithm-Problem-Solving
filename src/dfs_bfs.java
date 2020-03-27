@@ -1,4 +1,3 @@
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 
 public class dfs_bfs {
 	public static void main(String[] args) {
