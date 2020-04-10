@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <queue>
+#include <string>
+#define MAX_ 51
+
+using namespace std;
+
+int n, m;
+char map[MAX_][MAX_];
+char Case1, Case2;
+
+int cnt_chees1;
+int cnt_chess2;
+int Min = 2500;
+
+int main() {
+	cin >> n >> m;
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < m; j++)
+			cin >> map[i][j];
+
+	for (int a = 0; a < n - 7; a++) {
+		for (int b = 0; b < m - 7; b++) {
+			cnt_chees1 = 0;
+			cnt_chess2 = 0;
+			for (int i = a; i < a + 8; i++) {
+				for (int j = b; j < b + 8; j++) {
+					Case1 = (i % 2 == j % 2) ? 'W' : 'B';
+					if (Case1 != map[i][j])
+						cnt_chees1++;
+					Case2 = (i % 2 == j % 2) ? 'B' : 'W';
+					if (Case2 != map[i][j])
+						cnt_chess2++;
+				}
+			}
+			Min = min(Min, min(cnt_chees1, cnt_chess2));
+		}
+	}
+
+	cout << Min << '\n';
+
+	return 0;
+}

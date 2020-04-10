@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+int main() {
+
+	int N;
+	cin >> N;
+
+	int h;
+	int a, b, arr[3] = {};
+	
+	for (int i = 1; i <= N; i++) {
+		if (i < 100) h = i;
+		else if (i == 1000) break;
+		else {
+			a = 0; b = i;
+			while (b > 0) {
+				arr[a] = b % 10;
+				b /= 10; a++;
+			}
+			if (arr[0] - arr[1] == arr[1] - arr[2])
+				h++;
+		}
+	}
+
+	cout << h;
+	return 0;
+}

@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <queue>
+using namespace std;
+ 
+int main()
+{
+    int x, y;
+    queue<int> q;
+    queue<int> res;
+    cin >> x>> y;
+    cout << '<';
+    for (int i = 0; i < x; i++) {
+        q.push(i + 1);
+    }
+ 
+    for (int i = 0; i < x - 1; i++) {
+        for (int j = 0; j < y - 1; j++) {
+            q.push(q.front());
+            q.pop();
+        }
+        cout << q.front() << ", ";
+        q.pop();
+    }
+    cout << q.front()<<'>';
+}

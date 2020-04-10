@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int alpha[26];
+
+int main() {
+	string s;
+	cin >> s;
+	
+	int num = 0;
+	int max = 0;
+	char c;
+
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] >= 'A'&& s[i] <= 'Z') {
+			num = s[i] - 65;
+			alpha[num] ++;
+		}
+		else {
+			num = s[i] - 97;
+			alpha[num] ++;
+		}
+	}
+
+	for (int i = 0; i < 26; i++) {
+		if (alpha[i] > max) {
+			c = i + 65;
+			max = alpha[i];
+		}
+		else if (alpha[i] == max)
+			c = '?';
+	}
+	cout << c << '\n';
+	return 0;
+}

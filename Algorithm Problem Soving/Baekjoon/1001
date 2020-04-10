@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<algorithm>
+#include<iostream>
+#include<string.h>
+#include<string>
+#include<vector>
+#include<math.h>
+#pragma warning(disable:4996)
+
+using namespace std;
+
+int main()
+{
+	int a, b; 
+	cin >> a>>b;
+	cout << a-b;
+	return 0;
+}
