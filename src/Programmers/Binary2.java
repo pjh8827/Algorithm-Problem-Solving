@@ -1,9 +1,10 @@
+package Programmers;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class binary2 {
+public class Binary2 {
 
 	public static void main(String[] args) {
 		int n = 6;
@@ -13,27 +14,28 @@ public class binary2 {
 
 	public static long solution(int n, int[] times) {
 		long answer = Long.MAX_VALUE;
-		long start = 0;
-		long end = 0;
-		for (int time : times) {
-			if (end < time)
-				end = time;
+		long start=0;
+		long end=0;
+		for(int time : times) {
+			if(end<time) end=time;
 		}
+		
 		end *= n;
-		while (start <= end) {
-			long mid = (start + end) / 2;
-			long done = 0;
-			for (int time : times) {
-				done += mid / time;
+		
+		while(start<=end) {
+			long mid = (start+end)/2;
+			long sum = 0;
+			for(int time : times) {
+				sum+=mid/time;
 			}
-			if (done < n) {
-				start = mid + 1;
-			} else {
-				end = mid - 1;
-				if (mid < answer)
-					answer= mid;
+			if(sum<n) {
+				start = mid+1;
+			}else {
+				answer = Math.min(mid, answer);
+				end = mid-1;
 			}
 		}
+		
 		return answer;
 	}
 }

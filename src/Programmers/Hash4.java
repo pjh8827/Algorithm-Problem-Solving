@@ -1,3 +1,4 @@
+package Programmers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -41,16 +42,16 @@ public class Hash4 {
 				Object v1 = hm.get(o1);
 				Object v2 = hm.get(o2);
 				
-				return ((Comparable)v2).compareTo(v1);
+				return ((Comparable<Object>)v2).compareTo(v1);
 			}
         	
         });
         
-        Iterator it = list.iterator();
+        Iterator<String> it = list.iterator();
         List<Integer> list3 = new ArrayList<>();
         while(it.hasNext()) {
         	List<Music> list2 = new ArrayList<Music>();
-        	String key3 = (String)it.next();
+        	String key3 = it.next();
         	for(int i=0; i<genres.length; i++) {
         		if(key3.equals(genres[i])) {
         			list2.add(new Music(i, plays[i]));

@@ -1,6 +1,7 @@
+package Programmers;
 import java.util.*;
 
-public class sort2 {
+public class Sort3 {
 	public static void main(String[] args) {
 //		int[] citations = {3,0,6,1,5};
 //		int[] citations = {10, 8, 5, 4, 3};
@@ -18,8 +19,6 @@ public class sort2 {
 		System.out.println();
 		for(int i=size-1; i>=0; i--) {
 			if(citations[i]>size) continue;
-			System.out.print(citations[i]+" "+(i+1)+" "+citations[i]);
-			System.out.println();
 			if(size-i>=citations[i] && citations[i-1]<=citations[i] ) {
 				answer = citations[i];
 				break;

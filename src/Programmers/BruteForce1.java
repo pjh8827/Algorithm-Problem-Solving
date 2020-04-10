@@ -1,8 +1,9 @@
+package Programmers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class BruteForce {
+public class BruteForce1 {
 	public static void main(String[] args) {
 		int[] answer = {1,3,2,4,2,1,4};
 		System.out.println(Arrays.toString(solution(answer)));
